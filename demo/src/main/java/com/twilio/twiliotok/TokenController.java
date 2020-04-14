@@ -11,7 +11,7 @@ public class TokenController {
   // Token
 	@Autowired
 	private Token token;
-	
+	 
 	@Autowired
 	private TokenGenerator tokenGenerator;
 	

@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableAutoConfiguration
 public class DemoApplication {
 
-	// run
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
