@@ -11,23 +11,23 @@ public class TokenController {
   // Token
 	@Autowired
 	private Token token;
-	 
+	 		
 	@Autowired
 	private TokenGenerator tokenGenerator;
 	
-	@RequestMapping(value = "/demo", produces = "application/json", method = RequestMethod.GET)
+	@RequestMapping(value = "/", produces = "application/json", method = RequestMethod.GET)
 	public String hello() {
 		return "Rishabh";
 	}
 	
-	@RequestMapping(value = "/token", produces = "application/json", method = RequestMethod.GET)
-	public Token token(@RequestParam("identity") String identity) {
+	@RequestMapping(value = "/accessToken", produces = "application/json", method = RequestMethod.GET)
+	public String token(@RequestParam("identity") String identity) {
 		
 		System.out.println(identity);
 		String TWILIO_ACCESS_TOKEN = tokenGenerator.generateToken(identity); 
 		System.out.println(TWILIO_ACCESS_TOKEN);
 		token.setTWILIO_ACCESS_TOKEN(TWILIO_ACCESS_TOKEN);
 		
-		return token;
+		return TWILIO_ACCESS_TOKEN;
 	}
 }
